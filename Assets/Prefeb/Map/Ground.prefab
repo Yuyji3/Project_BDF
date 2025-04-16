@@ -572,6 +572,10 @@ PrefabInstance:
       value: Sprite-B
       objectReference: {fileID: 0}
     - target: {fileID: 3147925602799211203, guid: cdacaff9de8b6374195ceacd7cb01024, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3147925602799211203, guid: cdacaff9de8b6374195ceacd7cb01024, type: 3}
       propertyPath: m_DynamicOccludee
       value: 0
       objectReference: {fileID: 0}
