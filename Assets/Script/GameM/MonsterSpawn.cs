@@ -1,48 +1,24 @@
 using UnityEngine;
 using System.Collections;
+using System.Threading;
 
 public class MonsterSpawn : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
-    private Transform ptransform;
+    //private Transform ptransform;
+    [SerializeField]
     private GameObject monsterPrefab;
+    [SerializeField]
+    private GameObject point1;
 
-    void Start()
+    public void SpawnMonster(int round)
     {
-        GameObject ground = GameObject.Find("Ground");
-        Transform waypoint = ground.transform.Find("WayPoint");
-        ptransform = waypoint.transform.Find("Point1");
 
-        monsterPrefab = Resources.Load<GameObject>("Monster/Monster1");
-
-        if (monsterPrefab == null)
-        {
-            Debug.LogError("Monster1 프리팹을 Resources/Prefeb/Monster/ 에서 찾을 수 없습니다!");
-            return;
-        }
-        if (ptransform == null)
-        {
-            Debug.LogError("ptransform 프리팹을 Resources/Prefeb/Monster/ 에서 찾을 수 없습니다!");
-            return;
-        }
-        //Instantiate(monsterPrefab, ptransform.position, Quaternion.identity);
-
-        StartCoroutine(Spawn());
-
+        GameObject monsterOb = Instantiate(monsterPrefab, point1.transform.position, Quaternion.identity);
+ 
+        MonsterHp monster = monsterOb.GetComponent<MonsterHp>();
+ 
+        monster.SetupStats(round);
+ 
+        MonsterManager.IncreaseCount(); // 수 증가
     }
-
-
-    IEnumerator Spawn()
-    {
-        while (true)
-        {
-            Instantiate(monsterPrefab, ptransform.position, Quaternion.identity);
-            Debug.Log("몬스터 생성");
-            yield return new WaitForSeconds(1f);
-        }
-        
-    }
-
-
 }

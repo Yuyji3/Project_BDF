@@ -3,30 +3,41 @@ using UnityEngine.UI;
 
 public class MonsterHp : MonoBehaviour
 {
-    private Image hpFillImage; // Fill 이미지
+    [SerializeField] private Image hpFillImage;
 
-    private float maxHp = 100f;
+    private float maxHp = 2f;
     private float currentHp;
+    public float damage = 0;
 
-    public float damage;
     void Start()
     {
-        hpFillImage = GetComponentInChildren<Image>();
-        if (hpFillImage == null) { Debug.Log("현재 hp설정 안되어 있음"); };
+        if (hpFillImage == null)
+        {
+            Debug.LogError("hpFillImage가 연결되지 않았습니다!");
+        }
 
+        // 체력 초기화는 SetupStats에서 수행
+    }
+
+    void Update()
+    {
+        if (damage > 0)
+            TakeDamage(damage);
+    }
+
+    public void SetupStats(int round)
+    {
+        maxHp = 2f * Mathf.Pow(1.2f, round - 1);
         currentHp = maxHp;
         UpdateHpUI();
     }
-    private void Update()
-    {
-        TakeDamage(damage);
-    }
+
     public void TakeDamage(float damage)
     {
         currentHp = Mathf.Clamp(currentHp - damage, 0, maxHp);
         UpdateHpUI();
 
-        if(currentHp <= 0)
+        if (currentHp <= 0)
         {
             Destroy(gameObject);
         }
@@ -34,7 +45,12 @@ public class MonsterHp : MonoBehaviour
 
     void UpdateHpUI()
     {
-        hpFillImage.fillAmount = currentHp / maxHp;
-        
+        if (hpFillImage != null)
+            hpFillImage.fillAmount = currentHp / maxHp;
+    }
+
+    void OnDestroy()
+    {
+        MonsterManager.DecreaseCount();
     }
 }
