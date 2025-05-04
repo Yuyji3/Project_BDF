@@ -34,6 +34,8 @@ public class MonsterHp : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+
+        Debug.Log("데미지를 입었습니다.");
         currentHp = Mathf.Clamp(currentHp - damage, 0, maxHp);
         UpdateHpUI();
 
