@@ -1,13 +1,18 @@
 using UnityEngine;
-using System.Collections.Generic;
-using System.Linq;
+
+public enum WeaponType { Arrow, Stone, Ice, Fire }
 
 public class Attack : MonoBehaviour
 {
+    public WeaponType selectedWeapon = WeaponType.Arrow;
+
     public GameObject arrowPrefab;
+    public GameObject stonePrefab;
+    public GameObject icePrefab;
+    public GameObject firePrefab;
+
     public Transform firePoint;
     public float fireRate = 1f;
-    public float arrowSpeed = 10f;
     public float attackRange = 10f;
 
     private float timer;
@@ -15,7 +20,6 @@ public class Attack : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-
         if (timer >= fireRate)
         {
             timer = 0f;
@@ -23,8 +27,33 @@ public class Attack : MonoBehaviour
             GameObject target = FindClosestMonster();
             if (target != null)
             {
-                ShootArrow(target.transform);
+                ShootWeapon(target.transform);
             }
+        }
+        //Debug.Log(selectedWeapon);
+    }
+
+    void ShootWeapon(Transform target)
+    {
+        GameObject prefab = GetSelectedWeaponPrefab();
+        GameObject weapon = Instantiate(prefab, firePoint.position, Quaternion.identity);
+
+        // 각 무기 스크립트에 SetTarget()이 있을 경우
+        weapon.SendMessage("SetTarget", target, SendMessageOptions.DontRequireReceiver);
+    }
+
+    GameObject GetSelectedWeaponPrefab()
+    {
+        switch (selectedWeapon)
+        {
+            case WeaponType.Stone:
+                return stonePrefab;
+            case WeaponType.Ice:
+                return icePrefab;
+            case WeaponType.Fire:
+                return firePrefab;
+            default:
+                return arrowPrefab;
         }
     }
 
@@ -47,9 +76,8 @@ public class Attack : MonoBehaviour
         return closest;
     }
 
-    void ShootArrow(Transform target)
+    public void SetWeaponType(WeaponType type)
     {
-        GameObject arrow = Instantiate(arrowPrefab, firePoint.position, Quaternion.identity);
-        arrow.GetComponent<arrow>().SetTarget(target);
+        selectedWeapon = type;
     }
 }
