@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dark_stone_brick_wall_converted_0: -1765918252676608862
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
