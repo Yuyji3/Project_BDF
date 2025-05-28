@@ -19,10 +19,12 @@ public class WeaponSelectUI : MonoBehaviour
     public void OnSelectIce()
     {
         tower.SetWeaponType(WeaponType.Ice);
+        Debug.Log("얼음선택");
     }
 
     public void OnSelectFire()
     {
         tower.SetWeaponType(WeaponType.Fire);
+        Debug.Log("불 선택");
     }
 }
