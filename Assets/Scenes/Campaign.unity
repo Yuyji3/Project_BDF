@@ -506,6 +506,7 @@ GameObject:
   - component: {fileID: 353055260}
   - component: {fileID: 353055262}
   - component: {fileID: 353055261}
+  - component: {fileID: 353055263}
   m_Layer: 5
   m_Name: Skill2
   m_TagString: Untagged
@@ -552,8 +553,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -570,6 +571,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 353055259}
   m_CullTransparentMesh: 1
+--- !u!114 &353055263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353055259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7694078997147644d8f9965c88785023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconImage: {fileID: 353055261}
+  currentSkill: {fileID: 0}
 --- !u!1 &430384442
 GameObject:
   m_ObjectHideFlags: 0
@@ -1466,6 +1481,7 @@ GameObject:
   - component: {fileID: 682653190}
   - component: {fileID: 682653192}
   - component: {fileID: 682653191}
+  - component: {fileID: 682653193}
   m_Layer: 5
   m_Name: Skill5
   m_TagString: Untagged
@@ -1512,8 +1528,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1530,6 +1546,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682653189}
   m_CullTransparentMesh: 1
+--- !u!114 &682653193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682653189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7694078997147644d8f9965c88785023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconImage: {fileID: 1042312931}
+  currentSkill: {fileID: 0}
 --- !u!1 &710996659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,6 +1955,7 @@ GameObject:
   - component: {fileID: 948171892}
   - component: {fileID: 948171894}
   - component: {fileID: 948171893}
+  - component: {fileID: 948171895}
   m_Layer: 5
   m_Name: Skill4
   m_TagString: Untagged
@@ -1971,8 +2002,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1989,6 +2020,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 948171891}
   m_CullTransparentMesh: 1
+--- !u!114 &948171895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948171891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7694078997147644d8f9965c88785023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconImage: {fileID: 1042312931}
+  currentSkill: {fileID: 0}
 --- !u!1 &948245716
 GameObject:
   m_ObjectHideFlags: 0
@@ -2071,7 +2116,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 948245719}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2098948332}
+        m_TargetAssemblyTypeName: BuyButton, Assembly-CSharp
+        m_MethodName: OnBuy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &948245719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2295,6 +2352,7 @@ GameObject:
   - component: {fileID: 1042312930}
   - component: {fileID: 1042312932}
   - component: {fileID: 1042312931}
+  - component: {fileID: 1042312933}
   m_Layer: 5
   m_Name: Skill1
   m_TagString: Untagged
@@ -2341,8 +2399,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3292727054875925979, guid: f0e210395319bf643b05bc4b5b888ccb, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2359,6 +2417,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1042312929}
   m_CullTransparentMesh: 1
+--- !u!114 &1042312933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042312929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7694078997147644d8f9965c88785023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconImage: {fileID: 1042312931}
+  currentSkill: {fileID: 0}
 --- !u!1 &1048267897 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8795794934131200544, guid: ad11e4fb354fe7a4e836a1b47575f480, type: 3}
@@ -2377,6 +2449,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponSelectUI: {fileID: 1642676106}
+--- !u!4 &1049142226 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4556289842905098673, guid: ad11e4fb354fe7a4e836a1b47575f480, type: 3}
+  m_PrefabInstance: {fileID: 7414926953830398845}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1051205318
 GameObject:
   m_ObjectHideFlags: 0
@@ -3540,6 +3617,7 @@ GameObject:
   - component: {fileID: 1664292293}
   - component: {fileID: 1664292295}
   - component: {fileID: 1664292294}
+  - component: {fileID: 1664292296}
   m_Layer: 5
   m_Name: Skill3
   m_TagString: Untagged
@@ -3586,8 +3664,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3604,6 +3682,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664292292}
   m_CullTransparentMesh: 1
+--- !u!114 &1664292296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664292292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7694078997147644d8f9965c88785023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconImage: {fileID: 1042312931}
+  currentSkill: {fileID: 0}
 --- !u!1 &1918928348
 GameObject:
   m_ObjectHideFlags: 0
@@ -3615,6 +3707,7 @@ GameObject:
   - component: {fileID: 1918928349}
   - component: {fileID: 1918928351}
   - component: {fileID: 1918928350}
+  - component: {fileID: 1918928352}
   m_Layer: 5
   m_Name: Skill6
   m_TagString: Untagged
@@ -3661,8 +3754,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3679,6 +3772,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1918928348}
   m_CullTransparentMesh: 1
+--- !u!114 &1918928352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918928348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7694078997147644d8f9965c88785023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconImage: {fileID: 1042312931}
+  currentSkill: {fileID: 0}
 --- !u!1 &1920689195
 GameObject:
   m_ObjectHideFlags: 0
@@ -4370,6 +4477,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counterText: {fileID: 2014203485}
+--- !u!1 &2098948331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2098948333}
+  - component: {fileID: 2098948332}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2098948332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098948331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a275a737689811a4db88583cf7df5776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slots:
+  - {fileID: 1042312933}
+  - {fileID: 353055263}
+  - {fileID: 1664292296}
+  - {fileID: 948171895}
+  - {fileID: 682653193}
+  - {fileID: 1918928352}
+--- !u!4 &2098948333
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098948331}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1049142226}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2551427754090667532 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7316908466932127096, guid: ad11e4fb354fe7a4e836a1b47575f480, type: 3}
@@ -4443,7 +4601,10 @@ PrefabInstance:
       objectReference: {fileID: 1642676106}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4556289842905098673, guid: ad11e4fb354fe7a4e836a1b47575f480, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2098948333}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8795794934131200544, guid: ad11e4fb354fe7a4e836a1b47575f480, type: 3}
       insertIndex: -1
