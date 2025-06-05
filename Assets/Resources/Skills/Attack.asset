@@ -16,3 +16,4 @@ MonoBehaviour:
   skillName: 0
   icon: {fileID: 21650191583863038, guid: 1e7af4c480f984240aa253600f5bcbf8, type: 3}
   amount: 0
+  skillPrefab: {fileID: 4182327280173263221, guid: 3942f56e7b8c2e84ca8ddae3d12c4885, type: 3}

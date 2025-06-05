@@ -8,4 +8,6 @@ public class SkillData : ScriptableObject
     public Sprite icon;
     public int amount;
 
+
+    public GameObject skillPrefab;
 }
