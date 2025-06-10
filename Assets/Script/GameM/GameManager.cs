@@ -8,5 +8,9 @@ public class GameManager : MonoBehaviour
     {
         weaponSelectUI.SetActive(true);
     }
+    public enum SkillGrade
+    {
+        F, D, C, B, A, S, SS, SSS
+    }
 
 }

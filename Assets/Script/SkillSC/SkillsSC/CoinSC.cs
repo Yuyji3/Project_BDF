@@ -6,15 +6,24 @@ public class CoinSC : MonoBehaviour
 
     private float rotate=180f;
 
-    private GameObject _coinObject;
-    
+    private GameObject coinObject;
 
+    [SerializeField]
+    private float gradeSSS;
+    [SerializeField]
+    private float gradeSS;
+    [SerializeField]
+    private float gradeS;
+    [SerializeField]
+    private float gradeA;
+    [SerializeField]
+    private float gradeB;
     void Update()
     {
 
-        if (_coinObject != null)
+        if (coinObject != null)
         {
-            _coinObject.transform.Rotate(0, rotate * Time.deltaTime, 0);
+            coinObject.transform.Rotate(0, rotate * Time.deltaTime, 0);
         }
 
     }
@@ -23,7 +32,7 @@ public class CoinSC : MonoBehaviour
 
         GameObject _coinPrefeb = Resources.Load<GameObject>("Skills_Icon/Coin");
 
-        _coinObject = Instantiate(_coinPrefeb);
-        _coinObject.transform.position = new Vector3(transform.position.x,transform.position.y+0.2f,0);
+        coinObject = Instantiate(_coinPrefeb);
+        coinObject.transform.position = new Vector3(transform.position.x,transform.position.y+0.4f,0);
     }
 }

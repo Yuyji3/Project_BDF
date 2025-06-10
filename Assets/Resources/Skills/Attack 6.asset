@@ -16,4 +16,5 @@ MonoBehaviour:
   skillName: 6
   icon: {fileID: -3292727054875925979, guid: f0e210395319bf643b05bc4b5b888ccb, type: 3}
   amount: 0
-  skillPrefab: {fileID: 4182327280173263221, guid: 3942f56e7b8c2e84ca8ddae3d12c4885, type: 3}
+  skillPrefab: {fileID: 0}
+  skillScriptTypeName: CoinSC

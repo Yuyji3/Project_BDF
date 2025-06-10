@@ -8,6 +8,8 @@ public class SkillData : ScriptableObject
     public Sprite icon;
     public int amount;
 
-
+    // 스킬 코드 확인용
     public GameObject skillPrefab;
+
+    public string skillScriptTypeName;
 }

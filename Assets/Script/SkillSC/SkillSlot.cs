@@ -18,9 +18,19 @@ public class SkillSlot : MonoBehaviour
         
         Debug.Log("이미지 바뀜");
 
-        if (skill.skillPrefab != null)
+        if (!string.IsNullOrEmpty(skill.skillScriptTypeName))
         {
-            CoinSC coinScript = tower.AddComponent<CoinSC>();
+            System.Type skillType = System.Type.GetType(skill.skillScriptTypeName);
+
+            // 스크립트가 존재하고 MonoBehaviour일 때만 실행
+            if (skillType != null && skillType.IsSubclassOf(typeof(MonoBehaviour)))
+            {
+                tower.AddComponent(skillType);
+            }
+            else
+            {
+                Debug.LogWarning($"'{skill.skillScriptTypeName}' 타입을 찾을 수 없거나 MonoBehaviour가 아닙니다.");
+            }
         }
 
     }
