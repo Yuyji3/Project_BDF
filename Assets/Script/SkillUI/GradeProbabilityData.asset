@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61dcb03cbf1502a458d4fbd1c5a925e7, type: 3}
+  m_Name: GradeProbabilityData
+  m_EditorClassIdentifier: 
+  probF: 40
+  probD: 20
+  probC: 15
+  probB: 10
+  probA: 7
+  probS: 5
+  probSS: 2
+  probSSS: 1

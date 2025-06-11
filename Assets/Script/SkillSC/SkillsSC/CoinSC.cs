@@ -8,16 +8,8 @@ public class CoinSC : MonoBehaviour
 
     private GameObject coinObject;
 
-    [SerializeField]
-    private float gradeSSS;
-    [SerializeField]
-    private float gradeSS;
-    [SerializeField]
-    private float gradeS;
-    [SerializeField]
-    private float gradeA;
-    [SerializeField]
-    private float gradeB;
+    public SkillGrade grade;
+
     void Update()
     {
 
@@ -29,10 +21,13 @@ public class CoinSC : MonoBehaviour
     }
     void Start()
     {
+        Debug.Log($"코인 등급: {grade}");
 
         GameObject _coinPrefeb = Resources.Load<GameObject>("Skills_Icon/Coin");
 
         coinObject = Instantiate(_coinPrefeb);
         coinObject.transform.position = new Vector3(transform.position.x,transform.position.y+0.4f,0);
+
+        
     }
 }
