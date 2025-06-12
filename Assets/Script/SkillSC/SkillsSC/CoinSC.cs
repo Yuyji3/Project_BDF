@@ -30,4 +30,11 @@ public class CoinSC : MonoBehaviour
 
         
     }
+    public void Cleanup()
+    {
+        if (coinObject != null)
+        {
+            Destroy(coinObject);
+        }
+    }
 }

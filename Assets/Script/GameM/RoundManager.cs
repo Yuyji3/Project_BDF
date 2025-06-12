@@ -19,7 +19,9 @@ public class RoundManager : MonoBehaviour
 
     IEnumerator RoundLoop()
     {
-        
+
+        yield return new WaitForSeconds(5f);
+
         while (currentRound <= maxRound)
         {
             for (int i = 0; i < monstersPerRound; i++)
@@ -29,7 +31,7 @@ public class RoundManager : MonoBehaviour
                 Debug.Log("2");
                 yield return new WaitForSeconds(spawnInterval);
             }
-            yield return new WaitForSeconds(2f); // 라운드 간 텀 (옵션)
+            yield return new WaitForSeconds(5f); // 라운드 간 텀 (옵션)
             currentRound++;
         }
     }

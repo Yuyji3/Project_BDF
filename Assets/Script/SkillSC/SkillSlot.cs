@@ -70,20 +70,39 @@ public class SkillSlot : MonoBehaviour
                 }
             }
         }
+        //남아있는 오브젝트 지우기
+        if (!string.IsNullOrEmpty(currentSkill.skillScriptTypeName))
+        {
+            System.Type skillType = System.Type.GetType(currentSkill.skillScriptTypeName);
+            if (skillType != null)
+            {
+                var comp = tower.GetComponent(skillType);
+                if (comp != null)
+                {
+                    
+                    var cleanupMethod = skillType.GetMethod("Cleanup");
+                    if (cleanupMethod != null)
+                    {
+                        cleanupMethod.Invoke(comp, null);
+                    }
 
+                    Destroy(comp);
+                }
+            }
+        }
         currentSkill = null;
         iconImage.sprite = null;
-        iconImage.enabled = false;
+        //iconImage.enabled = false;
         IsSelected = false;
     }
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        IsSelected = true;
+    //public void OnPointerClick(PointerEventData eventData)
+    //{
+    //    IsSelected = true;
+    //    Debug.Log("클릭");
+    //    FindObjectOfType<BuyButton>().OnSlotSelected(this);
 
-        
-
-    }
+    //}
     public bool HasSkill() => currentSkill != null;
     public SkillData GetSkill() => currentSkill;
 }

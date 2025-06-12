@@ -48,14 +48,15 @@ public class BuyButton : MonoBehaviour
         ShowSellButton(); // 슬롯 클릭 시 Sell 버튼 활성화
     }
 
-    private void ShowBuyButton()
+    public void ShowBuyButton()
     {
         buyButton.SetActive(true);
         sellButton.SetActive(false);
     }
 
-    private void ShowSellButton()
+    public void ShowSellButton()
     {
+
         buyButton.SetActive(false);
         sellButton.SetActive(true);
     }
