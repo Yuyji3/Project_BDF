@@ -9,20 +9,27 @@ public class SkillSlot : MonoBehaviour
     public Image iconImage;
     public SkillData currentSkill;
 
-    [SerializeField] private GameObject tower;
-    [SerializeField] private GradeProbabilityData gradeData;
+    //현재 스킬슬롯 번호
+    public int currentInt;
+
+    [SerializeField] 
+    private GameObject tower;
+    [SerializeField] 
+    private GradeProbabilityData gradeData;
+
 
     [SerializeField]
-    private GameObject buyButton;
+    private Sprite skillIcon;
 
     [SerializeField]
-    private GameObject sellButton;
+    private Button button;
 
     public bool IsSelected { get; private set; }
 
     public void SetSkill(SkillData skill)
     {
         currentSkill = skill;
+        
         iconImage.sprite = skill.icon;
 
         SkillGrade grade = SkillGradeUtil.GetRandomGrade(gradeData);
@@ -56,53 +63,42 @@ public class SkillSlot : MonoBehaviour
     }
     public void ClearSkill()
     {
-        if (currentSkill != null)
-        {
-            // 스킬 스크립트 제거
-            if (!string.IsNullOrEmpty(currentSkill.skillScriptTypeName))
-            {
-                System.Type skillType = System.Type.GetType(currentSkill.skillScriptTypeName);
-                if (skillType != null && skillType.IsSubclassOf(typeof(MonoBehaviour)))
-                {
-                    var existing = tower.GetComponent(skillType);
-                    if (existing != null)
-                        Destroy(existing);
-                }
-            }
-        }
-        //남아있는 오브젝트 지우기
+        if (currentSkill == null) return;
+
+ 
+
+        // 1. 스킬 스크립트 제거
         if (!string.IsNullOrEmpty(currentSkill.skillScriptTypeName))
         {
             System.Type skillType = System.Type.GetType(currentSkill.skillScriptTypeName);
             if (skillType != null)
             {
+                //  오브젝트 정리
                 var comp = tower.GetComponent(skillType);
                 if (comp != null)
                 {
-                    
                     var cleanupMethod = skillType.GetMethod("Cleanup");
                     if (cleanupMethod != null)
-                    {
                         cleanupMethod.Invoke(comp, null);
-                    }
 
                     Destroy(comp);
                 }
             }
         }
-        currentSkill = null;
-        iconImage.sprite = null;
-        //iconImage.enabled = false;
+
+
+
+        if (button.currentInt2 == currentInt)
+        {
+            iconImage.sprite = skillIcon;
+            currentSkill = null;
+        }
+        
+
         IsSelected = false;
     }
 
-    //public void OnPointerClick(PointerEventData eventData)
-    //{
-    //    IsSelected = true;
-    //    Debug.Log("클릭");
-    //    FindObjectOfType<BuyButton>().OnSlotSelected(this);
-
-    //}
+  
     public bool HasSkill() => currentSkill != null;
     public SkillData GetSkill() => currentSkill;
 }
