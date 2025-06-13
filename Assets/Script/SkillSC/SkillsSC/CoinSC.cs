@@ -10,6 +10,9 @@ public class CoinSC : MonoBehaviour
 
     public SkillGrade grade;
 
+    
+    public GameManager gameManager;
+
     void Update()
     {
 
@@ -18,9 +21,13 @@ public class CoinSC : MonoBehaviour
             coinObject.transform.Rotate(0, rotate * Time.deltaTime, 0);
         }
 
+        gameManager.currentGold += 1f;
     }
     void Start()
     {
+
+        gameManager = GameManager.Instance;
+
         Debug.Log($"코인 등급: {grade}");
 
         GameObject _coinPrefeb = Resources.Load<GameObject>("Skills_Icon/Coin");

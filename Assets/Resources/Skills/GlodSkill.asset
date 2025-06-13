@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cba773ffccf58242a2082eece5f6546, type: 3}
+  m_Name: GlodSkill
+  m_EditorClassIdentifier: 
+  skillOdd: 0
+  skillName: 0
+  icon: {fileID: 21650191583863038, guid: 1e7af4c480f984240aa253600f5bcbf8, type: 3}
+  amount: 0
+  skillPrefab: {fileID: 0}
+  skillScriptTypeName: CoinSC
