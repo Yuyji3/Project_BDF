@@ -1,22 +1,33 @@
+using System;
 using UnityEngine;
 
-public enum WeaponType { Arrow, Stone, Ice, Fire }
-
-public class Attack : MonoBehaviour
+public class Tower : MonoBehaviour
 {
-    public WeaponType selectedWeapon = WeaponType.Arrow;
-
     public GameObject arrowPrefab;
-    public GameObject stonePrefab;
-    public GameObject icePrefab;
-    public GameObject firePrefab;
-
     public Transform firePoint;
-    public float fireRate = 1f;
+
+    public float fireRate = 1f; // 공격 속도 (초당)
+    public float damage = 1f;   // 공격력
+
     public float attackRange = 10f;
 
     private float timer;
 
+    public static Tower Instance { get; private set; }
+
+    public static event Action<Transform> OnAttack; // 공격 시 이벤트 발생
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+
+    }
     void Update()
     {
         timer += Time.deltaTime;
@@ -27,34 +38,20 @@ public class Attack : MonoBehaviour
             GameObject target = FindClosestMonster();
             if (target != null)
             {
-                ShootWeapon(target.transform);
+                ShootArrow(target.transform);
+
+                OnAttack?.Invoke(target.transform);
             }
         }
-
     }
 
-    void ShootWeapon(Transform target)
+    void ShootArrow(Transform target)
     {
-        GameObject prefab = GetSelectedWeaponPrefab();
-        GameObject weapon = Instantiate(prefab, firePoint.position, Quaternion.identity);
+        GameObject arrow = Instantiate(arrowPrefab, firePoint.position, Quaternion.identity);
 
-        // 각 무기 스크립트에 SetTarget()이 있을 경우
-        weapon.SendMessage("SetTarget", target, SendMessageOptions.DontRequireReceiver);
-    }
-
-    GameObject GetSelectedWeaponPrefab()
-    {
-        switch (selectedWeapon)
-        {
-            case WeaponType.Stone:
-                return stonePrefab;
-            case WeaponType.Ice:
-                return icePrefab;
-            case WeaponType.Fire:
-                return firePrefab;
-            default:
-                return arrowPrefab;
-        }
+        // Arrow 스크립트에 SetTarget 함수가 있다고 가정
+        arrow.SendMessage("SetTarget", target, SendMessageOptions.DontRequireReceiver);
+        arrow.SendMessage("SetDamage", damage, SendMessageOptions.DontRequireReceiver);
     }
 
     GameObject FindClosestMonster()
@@ -74,10 +71,5 @@ public class Attack : MonoBehaviour
         }
 
         return closest;
-    }
-
-    public void SetWeaponType(WeaponType type)
-    {
-        selectedWeapon = type;
     }
 }
