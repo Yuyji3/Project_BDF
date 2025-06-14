@@ -10,6 +10,9 @@ public class Button : MonoBehaviour
     [SerializeField]
     private SkillSlot currentSkill2;
 
+   
+    public SkillGrade upgraded;
+
     //현재 스킬슬롯 번호
     public int currentInt2;
 
@@ -117,7 +120,24 @@ public class Button : MonoBehaviour
             buyButton.SetActive(false);
             SellUpgradeButton.SetActive(true);
         }
+    }
 
- 
+    public void UpgradeButton()
+    {
+        SkillGrade currentGrade = slots[currentInt2].grade;
+        int maxIndex = System.Enum.GetValues(typeof(SkillGrade)).Length - 1;
+
+        if ((int)currentGrade >= maxIndex)
+        {
+            Debug.Log("이미 최고 등급입니다.");
+            return;
+        }
+
+        upgraded = (SkillGrade)((int)currentGrade + 1);
+
+        slots[currentInt2].grade = upgraded;
+
+        Debug.Log("업그레이드 완료: " + upgraded);
     }
 }
+

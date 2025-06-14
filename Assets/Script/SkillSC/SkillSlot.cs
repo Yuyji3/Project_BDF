@@ -14,9 +14,13 @@ public class SkillSlot : MonoBehaviour
 
     [SerializeField] 
     private GameObject tower;
-    [SerializeField] 
+
+
+    //받아온 등급
+    [SerializeField]
     private GradeProbabilityData gradeData;
 
+    public SkillGrade grade;
 
     [SerializeField]
     private Sprite skillIcon;
@@ -29,10 +33,10 @@ public class SkillSlot : MonoBehaviour
     public void SetSkill(SkillData skill)
     {
         currentSkill = skill;
-        
+
         iconImage.sprite = skill.icon;
 
-        SkillGrade grade = SkillGradeUtil.GetRandomGrade(gradeData);
+        grade = SkillGradeUtil.GetRandomGrade(gradeData);
 
         if (!string.IsNullOrEmpty(skill.skillScriptTypeName))
         {
@@ -61,6 +65,7 @@ public class SkillSlot : MonoBehaviour
             }
         }
     }
+
     public void ClearSkill()
     {
         if (currentSkill == null) return;

@@ -30,7 +30,7 @@ public class Attack : MonoBehaviour
                 ShootWeapon(target.transform);
             }
         }
-        //Debug.Log(selectedWeapon);
+
     }
 
     void ShootWeapon(Transform target)

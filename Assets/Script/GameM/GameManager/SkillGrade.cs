@@ -2,6 +2,7 @@
 public enum SkillGrade
 {
     F,
+    E,
     D,
     C,
     B,

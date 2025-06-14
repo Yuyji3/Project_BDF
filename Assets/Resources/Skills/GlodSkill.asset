@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillOdd: 0
   skillName: 0
-  icon: {fileID: 21650191583863038, guid: 1e7af4c480f984240aa253600f5bcbf8, type: 3}
+  icon: {fileID: 5659230168238626165, guid: b6bf64f3818ea7048adcf794dea42649, type: 3}
   amount: 0
   skillPrefab: {fileID: 0}
   skillScriptTypeName: CoinSC
