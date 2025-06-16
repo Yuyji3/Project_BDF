@@ -22,11 +22,7 @@ public class ThunderSC : MonoBehaviour
         Tower.OnAttack -= AttackThunder; // 해제
     }
 
-    void Update()
-    {
-        grade = buttonManager.upgraded;
 
-    }
     void Start()
     {
         GameObject targetObj = GameObject.Find("ButtonManager");
@@ -65,6 +61,8 @@ public class ThunderSC : MonoBehaviour
  
     public void Skillset()
     {
+        grade = buttonManager.upgraded;
+
         if (grade == SkillGrade.SSS)
         {
             Debug.Log("sss 등급입니다.");

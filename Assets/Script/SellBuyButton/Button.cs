@@ -24,7 +24,13 @@ public class Button : MonoBehaviour
 
     [SerializeField]
     private GameManager gameManager;
-    
+
+    [SerializeField]
+    private GradeImg gradeImg;
+
+    [SerializeField]
+    private Costmenual costmenual;
+
     void Start()
     {
         allSkills = Resources.LoadAll<SkillData>("Skills");
@@ -34,7 +40,9 @@ public class Button : MonoBehaviour
 
     public void OnBuy()
     {
-        if(gameManager.currentGold >= 100f)
+        costmenual.showcost();
+
+        if (gameManager.currentGold >= 100f)
         {
             gameManager.currentGold -= 100f;
             // 현재 슬롯에 들어 있는 스킬을 배열로 수집
@@ -119,11 +127,14 @@ public class Button : MonoBehaviour
         {
             buyButton.SetActive(false);
             SellUpgradeButton.SetActive(true);
+
+            gradeImg.showgrade();
         }
     }
 
     public void UpgradeButton()
     {
+
         SkillGrade currentGrade = slots[currentInt2].grade;
         int maxIndex = System.Enum.GetValues(typeof(SkillGrade)).Length - 1;
 
@@ -133,9 +144,27 @@ public class Button : MonoBehaviour
             return;
         }
 
+        if (gameManager.currentGold < costmenual.upCost)
+        {
+            Debug.Log("돈이 부족합니다");
+            return;
+        }
+
+  
+
         upgraded = (SkillGrade)((int)currentGrade + 1);
 
         slots[currentInt2].grade = upgraded;
+
+        
+
+
+        gradeImg.showgrade();
+
+        
+        gameManager.currentGold -= costmenual.upCost;
+
+        costmenual.showcost();
 
         Debug.Log("업그레이드 완료: " + upgraded);
     }
