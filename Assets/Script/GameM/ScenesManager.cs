@@ -5,8 +5,6 @@ public class ScenesManager : MonoBehaviour
     [SerializeField]
     private GameObject startMenu;
 
-    [SerializeField]
-    private GameObject weaponSelectUI;
 
     
     public void OnClikButtonCampaign(string Campaign)
@@ -18,9 +16,4 @@ public class ScenesManager : MonoBehaviour
         startMenu.SetActive(true);
     }
 
-    public void OnClickButtonSelect()
-    {
-        //weaponSelectUI.SetActive(false);
-        Destroy(weaponSelectUI);
-    }
 }

@@ -16,8 +16,8 @@ public class Button : MonoBehaviour
     //현재 스킬슬롯 번호
     public int currentInt2;
 
-    [SerializeField]
-    private GameObject buyButton;
+    //[SerializeField]
+    //private GameObject buyButton;
 
     [SerializeField]
     private GameObject SellUpgradeButton;
@@ -31,6 +31,7 @@ public class Button : MonoBehaviour
     [SerializeField]
     private Costmenual costmenual;
 
+ 
     void Start()
     {
         allSkills = Resources.LoadAll<SkillData>("Skills");
@@ -116,7 +117,7 @@ public class Button : MonoBehaviour
 
     public void ShowBuyButton()
     {
-        buyButton.SetActive(true);
+        //buyButton.SetActive(true);
         SellUpgradeButton.SetActive(false);
     }
 
@@ -125,7 +126,7 @@ public class Button : MonoBehaviour
     
         if (slots[currentInt2].HasSkill())
         {
-            buyButton.SetActive(false);
+            //buyButton.SetActive(false);
             SellUpgradeButton.SetActive(true);
 
             gradeImg.showgrade();
