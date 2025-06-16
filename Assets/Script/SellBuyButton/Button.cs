@@ -7,12 +7,11 @@ public class Button : MonoBehaviour
     public SkillSlot[] slots;
     private SkillData[] allSkills;
 
-    [SerializeField]
-    private SkillSlot currentSkill2;
+    public  SkillSlot currentSkill2;
 
    
     public SkillGrade upgraded;
-
+    SkillGrade currentGrade;
     //현재 스킬슬롯 번호
     public int currentInt2;
 
@@ -132,11 +131,19 @@ public class Button : MonoBehaviour
             gradeImg.showgrade();
         }
     }
+    public void show(GameObject button1)
+    {
+        button1.SetActive(true);
+    }
+    public void back(GameObject button2)
+    {
+        button2.SetActive(false);
+    }
 
     public void UpgradeButton()
     {
 
-        SkillGrade currentGrade = slots[currentInt2].grade;
+        currentGrade = slots[currentInt2].grade;
         int maxIndex = System.Enum.GetValues(typeof(SkillGrade)).Length - 1;
 
         if ((int)currentGrade >= maxIndex)
