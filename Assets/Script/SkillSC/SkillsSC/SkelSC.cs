@@ -6,7 +6,7 @@ public class SkelSC : MonoBehaviour
 
     private List<Transform> waypoints = new List<Transform>();
 
-    private float speed = 20f;
+    private float speed = 10f;
     private int currentIndex = 0;
 
     public GameObject spawned;
