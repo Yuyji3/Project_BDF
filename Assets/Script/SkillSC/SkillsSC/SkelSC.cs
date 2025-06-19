@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SkelSC : MonoBehaviour
@@ -6,10 +7,12 @@ public class SkelSC : MonoBehaviour
 
     private List<Transform> waypoints = new List<Transform>();
 
-    private float speed = 10f;
+    private float speed = 8f;
     private int currentIndex = 0;
 
-    public GameObject spawned;
+    public float attack = 0.5f;
+
+    private GameObject spawned;
 
     private GameObject skelOB;
 

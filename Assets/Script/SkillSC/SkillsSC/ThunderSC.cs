@@ -7,7 +7,6 @@ public class ThunderSC : MonoBehaviour
     public GameObject thunderEffectPrefab; // 시각효과(옵션)
     public float thunderMultiplier = 0;  // 공격력 계수
 
-
     public SkillGrade grade;
 
     public Button buttonManager;

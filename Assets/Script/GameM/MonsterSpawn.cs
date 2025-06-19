@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Threading;
+using TMPro;
 
 public class MonsterSpawn : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class MonsterSpawn : MonoBehaviour
     private GameObject monsterPrefab;
     [SerializeField]
     private GameObject point1;
+
+    [SerializeField]
+    private MonsterManager monsterManager;
 
     public void SpawnMonster(int round)
     {
@@ -19,6 +23,6 @@ public class MonsterSpawn : MonoBehaviour
  
         monster.SetupStats(round);
  
-        MonsterManager.IncreaseCount(); // 수 증가
+        monsterManager.IncreaseCount(); // 수 증가
     }
 }
