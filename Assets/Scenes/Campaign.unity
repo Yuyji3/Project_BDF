@@ -1399,7 +1399,7 @@ MonoBehaviour:
   tower: {fileID: 727811741}
   gradeData: {fileID: 11400000, guid: 8f3c8d1f9a9e6d540be6e0dc15f4b122, type: 2}
   grade: 0
-  skillIcon: {fileID: 21300000, guid: 6403afd719acd2b4dbb0dfae7add33cb, type: 3}
+  skillIcon: {fileID: 21300000, guid: 76a827c0b7b700d4fa9e135b970a64b1, type: 3}
   button: {fileID: 2098948332}
 --- !u!114 &489255421
 MonoBehaviour:
@@ -1421,7 +1421,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6403afd719acd2b4dbb0dfae7add33cb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 76a827c0b7b700d4fa9e135b970a64b1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1564,7 +1564,7 @@ MonoBehaviour:
   tower: {fileID: 727811741}
   gradeData: {fileID: 11400000, guid: 8f3c8d1f9a9e6d540be6e0dc15f4b122, type: 2}
   grade: 0
-  skillIcon: {fileID: 21300000, guid: 6403afd719acd2b4dbb0dfae7add33cb, type: 3}
+  skillIcon: {fileID: 21300000, guid: 76a827c0b7b700d4fa9e135b970a64b1, type: 3}
   button: {fileID: 2098948332}
 --- !u!114 &507889586
 MonoBehaviour:
@@ -1586,7 +1586,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6403afd719acd2b4dbb0dfae7add33cb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 76a827c0b7b700d4fa9e135b970a64b1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1916,7 +1916,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9196982781463725494, guid: 953de90cd06fe67498e3784d11a2b184, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2094,7 +2094,8 @@ MonoBehaviour:
   arrowPrefab: {fileID: 3414020687305686642, guid: 972f8c53b105b254d84d5464f8b54e4d, type: 3}
   firePoint: {fileID: 140212615}
   fireRate: 1
-  damage: 1
+  attackPower: 1
+  magicPower: 1
   attackRange: 10
 --- !u!1 &756559380
 GameObject:
@@ -2623,7 +2624,7 @@ MonoBehaviour:
   tower: {fileID: 727811741}
   gradeData: {fileID: 11400000, guid: 8f3c8d1f9a9e6d540be6e0dc15f4b122, type: 2}
   grade: 0
-  skillIcon: {fileID: 21300000, guid: 6403afd719acd2b4dbb0dfae7add33cb, type: 3}
+  skillIcon: {fileID: 21300000, guid: 76a827c0b7b700d4fa9e135b970a64b1, type: 3}
   button: {fileID: 2098948332}
 --- !u!114 &840697014
 MonoBehaviour:
@@ -2645,7 +2646,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6403afd719acd2b4dbb0dfae7add33cb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 76a827c0b7b700d4fa9e135b970a64b1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2663,6 +2664,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840697010}
   m_CullTransparentMesh: 1
+--- !u!1 &939010305
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 939010306}
+  m_Layer: 0
+  m_Name: SkillSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &939010306
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939010305}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1275015836}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &948245716
 GameObject:
   m_ObjectHideFlags: 0
@@ -3246,7 +3282,7 @@ MonoBehaviour:
   tower: {fileID: 727811741}
   gradeData: {fileID: 11400000, guid: 8f3c8d1f9a9e6d540be6e0dc15f4b122, type: 2}
   grade: 0
-  skillIcon: {fileID: 21300000, guid: 6403afd719acd2b4dbb0dfae7add33cb, type: 3}
+  skillIcon: {fileID: 21300000, guid: 76a827c0b7b700d4fa9e135b970a64b1, type: 3}
   button: {fileID: 2098948332}
 --- !u!114 &1042312934
 MonoBehaviour:
@@ -3336,7 +3372,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6403afd719acd2b4dbb0dfae7add33cb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 76a827c0b7b700d4fa9e135b970a64b1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3911,6 +3947,7 @@ RectTransform:
   - {fileID: 950824881}
   - {fileID: 286215773}
   - {fileID: 570270815}
+  - {fileID: 939010306}
   m_Father: {fileID: 1119620826}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
@@ -4043,7 +4080,7 @@ MonoBehaviour:
   tower: {fileID: 727811741}
   gradeData: {fileID: 11400000, guid: 8f3c8d1f9a9e6d540be6e0dc15f4b122, type: 2}
   grade: 0
-  skillIcon: {fileID: 21300000, guid: 6403afd719acd2b4dbb0dfae7add33cb, type: 3}
+  skillIcon: {fileID: 21300000, guid: 76a827c0b7b700d4fa9e135b970a64b1, type: 3}
   button: {fileID: 2098948332}
 --- !u!114 &1291444953
 MonoBehaviour:
@@ -4065,7 +4102,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6403afd719acd2b4dbb0dfae7add33cb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 76a827c0b7b700d4fa9e135b970a64b1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4770,7 +4807,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 346.59995, y: -74.26514}
+  m_AnchoredPosition: {x: 346.59998, y: -74.26514}
   m_SizeDelta: {x: 47.199905, y: -25.070068}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2014203485
@@ -5194,6 +5231,7 @@ MonoBehaviour:
   currentSkill2: {fileID: 1042312933}
   upgraded: 0
   currentInt2: 0
+  currentInt3: 0
   SellUpgradeButton: {fileID: 1812502844}
   gameManager: {fileID: 0}
   gradeImg: {fileID: 56412106}
@@ -5474,7 +5512,7 @@ MonoBehaviour:
   tower: {fileID: 727811741}
   gradeData: {fileID: 11400000, guid: 8f3c8d1f9a9e6d540be6e0dc15f4b122, type: 2}
   grade: 0
-  skillIcon: {fileID: 21300000, guid: 6403afd719acd2b4dbb0dfae7add33cb, type: 3}
+  skillIcon: {fileID: 21300000, guid: 76a827c0b7b700d4fa9e135b970a64b1, type: 3}
   button: {fileID: 2098948332}
 --- !u!114 &2121925748
 MonoBehaviour:
@@ -5496,7 +5534,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6403afd719acd2b4dbb0dfae7add33cb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 76a827c0b7b700d4fa9e135b970a64b1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5684,6 +5722,10 @@ PrefabInstance:
     - target: {fileID: 6245581813764839569, guid: 6d1929830beed03489cba4309253fed8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8313849554194209578, guid: 6d1929830beed03489cba4309253fed8, type: 3}
+      propertyPath: currentGold
+      value: 1000000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

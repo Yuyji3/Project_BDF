@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cba773ffccf58242a2082eece5f6546, type: 3}
   m_Name: WindCircle
   m_EditorClassIdentifier: 
-  skillOdd: 0
-  skillName: 5
-  icon: {fileID: 4820048890016187783, guid: f0e210395319bf643b05bc4b5b888ccb, type: 3}
-  amount: 0
-  skillPrefab: {fileID: 0}
-  skillScriptTypeName: CoinSC
+  skillnumber: 0
+  skillname: 
+  icon: {fileID: 21300000, guid: 4e3eff088f35a29409a7e356d57bd31d, type: 3}
+  level: 0
+  currentpower: 0
+  uppower: 0
+  skillex: "\uCD08\uB2F9 n\uC758 \uD53C\uD574\uB97C \uC900\uB2E4.\nSSS : \nSS\nS\nA\nB\nC\nD\nE\nF"
+  skillScriptTypeName: WindCircle

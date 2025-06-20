@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cba773ffccf58242a2082eece5f6546, type: 3}
   m_Name: Skel
   m_EditorClassIdentifier: 
-  skillnumber: 0
+  skillnumber: 2
   skillname: 
   icon: {fileID: 21300000, guid: 8a5f9829a049c704fa992203bfc451f2, type: 3}
   level: 0
@@ -20,5 +20,4 @@ MonoBehaviour:
   uppower: 0
   skillex: "\uACF5\uACA9\uC2DC 30% \uD655\uB960\uB85C \uBC88\uAC1C\uB97C \uC18C\uD658\uD574
     n\uC758 \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4.\nSSS : \nSS\nS\nA\nB\nC\nD\nE\nF"
-  skillPrefab: {fileID: 2953972079135858261, guid: 514765e846a20a145be98886f90d62e1, type: 3}
   skillScriptTypeName: SkelSC

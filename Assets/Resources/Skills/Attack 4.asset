@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cba773ffccf58242a2082eece5f6546, type: 3}
   m_Name: Attack 4
   m_EditorClassIdentifier: 
-  skillOdd: 0
-  skillName: 4
+  skillnumber: 4
+  skillname: 
   icon: {fileID: -2971867833968599812, guid: f0e210395319bf643b05bc4b5b888ccb, type: 3}
-  amount: 0
-  skillPrefab: {fileID: 0}
+  level: 0
+  currentpower: 0
+  uppower: 0
+  skillex: 
   skillScriptTypeName: CoinSC

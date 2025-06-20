@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cba773ffccf58242a2082eece5f6546, type: 3}
   m_Name: GlodSkill
   m_EditorClassIdentifier: 
-  skillnumber: 0
+  skillnumber: 3
   skillname: 
-  icon: {fileID: 5659230168238626165, guid: b6bf64f3818ea7048adcf794dea42649, type: 3}
+  icon: {fileID: 1356962760864012283, guid: de14242464674984b921d7eaaea45793, type: 3}
   level: 0
   currentpower: 0
   uppower: 0
   skillex: "\uCD08\uB2F9 n\uC758 \uACE8\uB4DC\uB97C \uC5BB\uB294\uB2E4\nSSS : \nSS\nS\nA\nB\nC\nD\nE\nF"
-  skillPrefab: {fileID: 0}
   skillScriptTypeName: CoinSC
