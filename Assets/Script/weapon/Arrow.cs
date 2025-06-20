@@ -9,7 +9,7 @@ public class arrow : MonoBehaviour
     public void SetTarget(Transform t)
     {
         target = t;
-        _damage = Tower.Instance.damage; // 여기서 가져옴
+        _damage = Tower.Instance.attackPower; // 여기서 가져옴
     }
 
     void Update()

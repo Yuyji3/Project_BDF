@@ -7,7 +7,9 @@ public class Tower : MonoBehaviour
     public Transform firePoint;
 
     public float fireRate = 1f; // 공격 속도 (초당)
-    public float damage = 1f;   // 공격력
+    
+    public float attackPower = 1f;   //  기본 공격력
+    public float magicPower = 1f;  // 마법 공격력
 
     public float attackRange = 10f;
 
@@ -51,7 +53,7 @@ public class Tower : MonoBehaviour
 
         // Arrow 스크립트에 SetTarget 함수가 있다고 가정
         arrow.SendMessage("SetTarget", target, SendMessageOptions.DontRequireReceiver);
-        arrow.SendMessage("SetDamage", damage, SendMessageOptions.DontRequireReceiver);
+        arrow.SendMessage("SetDamage", attackPower, SendMessageOptions.DontRequireReceiver);
     }
 
     GameObject FindClosestMonster()

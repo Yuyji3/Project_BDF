@@ -18,6 +18,10 @@ public class SkelSC : MonoBehaviour
 
     public SkillGrade grade;
 
+    private Button buttonManager;
+
+    private int currentint3;
+
     void Update()
     {
         if (waypoints.Count == 0) return;
@@ -42,7 +46,19 @@ public class SkelSC : MonoBehaviour
         // WayPoint 라는 이름의 부모 오브젝트 찾기
         GameObject waypointParent = GameObject.Find("WayPoint");
 
-        skelOB = Resources.Load<GameObject>("Skills_Icon/Skel");
+        
+
+        GameObject targetObj = GameObject.Find("ButtonManager");
+        if (targetObj != null)
+        {
+            buttonManager = targetObj.GetComponent<Button>();
+        }
+
+        currentint3 = buttonManager.currentInt3;
+
+        Skillset();
+
+        skelOB = Resources.Load<GameObject>("Skills_Prefab/Skel");
 
         if (waypointParent == null)
         {
@@ -73,6 +89,56 @@ public class SkelSC : MonoBehaviour
         else
         {
             Debug.LogWarning("skelOB이 비어있음");
+            Destroy(spawned);
+        }
+    }
+
+    public void Skillset()
+    {
+        if (buttonManager.slots[currentint3].grade == SkillGrade.SSS)
+        {
+            Debug.Log("스켈 sss 등급입니다.");
+            attack = 2.7f;
+        }
+        if (buttonManager.slots[currentint3].grade == SkillGrade.SS)
+        {
+            Debug.Log("스켈ss 등급입니다.");
+            attack = 2.5f;
+        }
+        if (buttonManager.slots[currentint3].grade == SkillGrade.S)
+        {
+            Debug.Log("스켈s 등급입니다.");
+            attack = 2.3f;
+        }
+        if (buttonManager.slots[currentint3].grade == SkillGrade.A)
+        {
+            Debug.Log("스켈a 등급입니다.");
+            attack = 2.1f;
+        }
+        if (buttonManager.slots[currentint3].grade == SkillGrade.B)
+        {
+            Debug.Log("스켈b 등급입니다.");
+            attack = 1.9f;
+        }
+        if (buttonManager.slots[currentint3].grade == SkillGrade.C)
+        {
+            Debug.Log("스켈c 등급입니다.");
+            attack = 1.7f;
+        }
+        if (buttonManager.slots[currentint3].grade == SkillGrade.D)
+        {
+            Debug.Log("스켈d 등급입니다.");
+            attack = 1.5f;
+        }
+        if (buttonManager.slots[currentint3].grade == SkillGrade.E)
+        {
+            Debug.Log("스켈e 등급입니다.");
+            attack = 1.3f;
+        }
+        if (buttonManager.slots[currentint3].grade == SkillGrade.F)
+        {
+            Debug.Log("스켈f 등급입니다.");
+            attack = 1.1f;
         }
     }
 }

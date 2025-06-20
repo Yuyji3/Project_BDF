@@ -4,12 +4,14 @@ public class ThunderSC : MonoBehaviour
 {
     public float triggerChance = 0.3f; // 30% 확률로 발동
 
-    public GameObject thunderEffectPrefab; // 시각효과(옵션)
+    public GameObject EffectPrefab; // 시각효과(옵션)
     public float thunderMultiplier = 0;  // 공격력 계수
 
     public SkillGrade grade;
 
     public Button buttonManager;
+
+    private int currentint3;
 
     private void OnEnable()
     {
@@ -30,6 +32,7 @@ public class ThunderSC : MonoBehaviour
             buttonManager = targetObj.GetComponent<Button>();
         }
 
+        currentint3 = buttonManager.currentInt3;
 
     }
     public void AttackThunder(Transform target)
@@ -37,7 +40,7 @@ public class ThunderSC : MonoBehaviour
         Skillset();
         if (Random.value <= triggerChance)
         {
-            float damage = Tower.Instance.damage * thunderMultiplier;
+            float damage = Tower.Instance.attackPower * thunderMultiplier;
 
             // 데미지 적용
             MonsterHp monster = target.GetComponent<MonsterHp>();
@@ -47,9 +50,9 @@ public class ThunderSC : MonoBehaviour
             }
 
             // 번개 이펙트 생성 (선택사항)
-            if (thunderEffectPrefab != null)
+            if (EffectPrefab != null)
             {
-                GameObject effect  = Instantiate(thunderEffectPrefab, target.position, Quaternion.identity);
+                GameObject effect  = Instantiate(EffectPrefab, target.position, Quaternion.identity);
 
                 Destroy(effect, 1f);
             }
@@ -60,51 +63,50 @@ public class ThunderSC : MonoBehaviour
  
     public void Skillset()
     {
-        grade = buttonManager.upgraded;
 
-        if (grade == SkillGrade.SSS)
+        if (buttonManager.slots[currentint3].grade == SkillGrade.SSS)
         {
-            Debug.Log("sss 등급입니다.");
+            Debug.Log("썬더 sss 등급입니다.");
             thunderMultiplier = 2.7f;
         }
-        if (grade == SkillGrade.SS)
+        if (buttonManager.slots[currentint3].grade == SkillGrade.SS)
         {
-            Debug.Log("ss 등급입니다.");
+            Debug.Log("썬더ss 등급입니다.");
             thunderMultiplier = 2.5f;
         }
-        if (grade == SkillGrade.S)
+        if (buttonManager.slots[currentint3].grade == SkillGrade.S)
         {
-            Debug.Log("s 등급입니다.");
+            Debug.Log("썬더s 등급입니다.");
             thunderMultiplier = 2.3f;
         }
-        if (grade == SkillGrade.A)
+        if (buttonManager.slots[currentint3].grade == SkillGrade.A)
         {
-            Debug.Log("a 등급입니다.");
+            Debug.Log("썬더a 등급입니다.");
             thunderMultiplier = 2.1f;
         }
-        if (grade == SkillGrade.B)
+        if (buttonManager.slots[currentint3].grade == SkillGrade.B)
         {
-            Debug.Log("b 등급입니다.");
+            Debug.Log("썬더b 등급입니다.");
             thunderMultiplier = 1.9f;
         }
-        if (grade == SkillGrade.C)
+        if (buttonManager.slots[currentint3].grade == SkillGrade.C)
         {
-            Debug.Log("c 등급입니다.");
+            Debug.Log("썬더c 등급입니다.");
             thunderMultiplier = 1.7f;
         }
-        if (grade == SkillGrade.D)
+        if (buttonManager.slots[currentint3].grade == SkillGrade.D)
         {
-            Debug.Log("d 등급입니다.");
+            Debug.Log("썬더d 등급입니다.");
             thunderMultiplier = 1.5f;
         }
-        if (grade == SkillGrade.E)
+        if (buttonManager.slots[currentint3].grade == SkillGrade.E)
         {
-            Debug.Log("e 등급입니다.");
+            Debug.Log("썬더e 등급입니다.");
             thunderMultiplier = 1.3f;
         }
-        if (grade == SkillGrade.F)
+        if (buttonManager.slots[currentint3].grade == SkillGrade.F)
         {
-            Debug.Log("f 등급입니다.");
+            Debug.Log("썬더f 등급입니다.");
             thunderMultiplier = 1.1f;
         }
     }

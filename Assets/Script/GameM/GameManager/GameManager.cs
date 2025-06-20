@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public float currentGold = 1000f;
+    public float currentGold = 1000000f;
 
     public static GameManager Instance { get; private set; }
     

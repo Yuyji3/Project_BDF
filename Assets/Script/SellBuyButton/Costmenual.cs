@@ -14,14 +14,11 @@ public class Costmenual : MonoBehaviour
 
     public int upCost;
 
-    void Start()
-    {
-        currentint2 = button.currentInt2;
-        
-    }
 
     public void showcost()
     {
+        currentint2 = button.currentInt2;
+
         if (button.slots[currentint2].grade == SkillGrade.SSS)
         {
             costText.text = $"Full Upgrade";

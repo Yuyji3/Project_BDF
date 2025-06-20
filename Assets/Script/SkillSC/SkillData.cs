@@ -14,8 +14,5 @@ public class SkillData : ScriptableObject
     [TextArea(2, 5)]
     public string skillex; // 스킬 설명
 
-    // 스킬 코드 확인용
-    public GameObject skillPrefab;
-
     public string skillScriptTypeName;
 }
