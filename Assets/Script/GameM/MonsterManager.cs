@@ -7,6 +7,8 @@ public class MonsterManager : MonoBehaviour
     public static int monsterCount = 0;
     public static int maxCount = 20;
 
+    public static int monsterKill = 0;
+
     public TextMeshProUGUI counterText;
 
     public GameObject gameOver;
@@ -32,6 +34,8 @@ public class MonsterManager : MonoBehaviour
     public static void DecreaseCount()
     {
         monsterCount--;
+
+        monsterKill++; 
     }
 
     public static int GetCount() => monsterCount;
