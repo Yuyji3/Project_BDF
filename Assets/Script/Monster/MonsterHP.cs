@@ -53,6 +53,6 @@ public class MonsterHp : MonoBehaviour
 
     void OnDestroy()
     {
-        MonsterManager.DecreaseCount();
+        MonsterManager.Instance.DecreaseCount();
     }
 }

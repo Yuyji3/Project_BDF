@@ -24,7 +24,6 @@ public class Button : MonoBehaviour
     [SerializeField]
     private GameObject SellUpgradeButton;
 
-    [SerializeField]
     private GameManager gameManager;
 
     [SerializeField]
