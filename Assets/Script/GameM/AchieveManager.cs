@@ -46,6 +46,13 @@ public class AchieveManager : MonoBehaviour
             // 모든 업적 완료 처리: 버튼 비활성화
             achieveButton[0].interactable = false;
             achieveButton[0].image.color = Color.gray;
+
+            if (achievements.Length > 0)
+            {
+                var lastInfo = achievements[achievements.Length - 1];
+
+                lastInfo.uiText.text = "Clear!";
+            }
             return;
         }
 
@@ -92,6 +99,14 @@ public class AchieveManager : MonoBehaviour
             // 모든 업적 완료 처리: 버튼 비활성화
             achieveButton[1].interactable = false;
             achieveButton[1].image.color = Color.gray;
+
+            if (campaignAchievements.Length > 0)
+            {
+                var lastInfo = campaignAchievements[campaignAchievements.Length - 1];
+
+                lastInfo.uiText.text = "Clear!";
+            }
+
             return;
         }
 

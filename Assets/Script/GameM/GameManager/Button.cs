@@ -32,6 +32,8 @@ public class Button : MonoBehaviour
     [SerializeField]
     private Costmenual costmenual;
 
+    //[SerializeField]
+    //private GameObject settingUI;
  
     void Start()
     {
@@ -143,6 +145,7 @@ public class Button : MonoBehaviour
     public void back(GameObject button2)
     {
         button2.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     public void UpgradeButton()
@@ -180,6 +183,13 @@ public class Button : MonoBehaviour
         costmenual.showcost();
 
         Debug.Log("업그레이드 완료: " + upgraded);
+    }
+
+    public void settingButton()
+    {
+        //settingUI.SetActive(true);
+
+        Time.timeScale = 0f;
     }
 }
 

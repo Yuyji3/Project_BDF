@@ -2,9 +2,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class ScenesManager : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject startMenu;
-
 
     
     public void OnClikButtonCampaign(string Campaign)
@@ -21,7 +18,9 @@ public class ScenesManager : MonoBehaviour
     }
     public void OnClickButtonStart()
     {
-        startMenu.SetActive(true);
+
+
+        RobbyUIManager.Instance.startMenu.SetActive(true);
     }
 
 }
