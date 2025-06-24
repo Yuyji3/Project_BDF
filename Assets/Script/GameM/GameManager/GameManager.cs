@@ -4,10 +4,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public float currentGold = 1000000f;
-    public float currentBlue = 1000f;
-    public float currentRed =  1000f;
 
     public static GameManager Instance { get; private set; }
+
 
     public TextMeshProUGUI blueText;
     public TextMeshProUGUI redText;
@@ -25,5 +24,14 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject); // 중복 방지
         }
     }
+    void Start()
+    {
+        CashReflash();
+    }
+    public void CashReflash()
+    {
 
+        blueText.text = $"{SaveManager.Instance.Data.blueCrystal}";
+        redText.text = $"{SaveManager.Instance.Data.redCrystal}";
+    }
 }

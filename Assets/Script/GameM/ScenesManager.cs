@@ -17,7 +17,7 @@ public class ScenesManager : MonoBehaviour
     {
         SceneManager.LoadScene(Robby);
 
-
+        GameManager.Instance.CashReflash();
     }
     public void OnClickButtonStart()
     {

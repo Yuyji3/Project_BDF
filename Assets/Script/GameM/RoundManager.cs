@@ -5,7 +5,7 @@ using TMPro;
 public class RoundManager : MonoBehaviour
 {
     public int currentRound = 1;
-    public int maxRound = 1;
+    public int maxRound = 0;
     public int monstersPerRound = 40;
     public float spawnInterval = 1f;
 
@@ -72,6 +72,8 @@ public class RoundManager : MonoBehaviour
         }
         // 클리어 화면
         SaveManager.Instance.AddMonsterKill(MonsterManager.Instance.monsterKill);
+
+        SaveManager.Instance.AddCampaignClear();
 
         gameClear.SetActive(true);
 
