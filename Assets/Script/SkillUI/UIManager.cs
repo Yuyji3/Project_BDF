@@ -33,7 +33,7 @@ public class SkillUIManager : MonoBehaviour
     {
         int index = skillindex.slotIndex;
 
-        skillname.text = slots[index].name;
+        skillname.text = slots[index].name
         skillimage.sprite = slots[index].iconImage.sprite;
     }
 }
