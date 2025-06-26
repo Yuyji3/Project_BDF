@@ -13,14 +13,9 @@ public class ScenesManager : MonoBehaviour
     public void OnClikButtonRobby(string Robby)
     {
         SceneManager.LoadScene(Robby);
-
+        Time.timeScale = 1f;
         GameManager.Instance.CashReflash();
     }
-    public void OnClickButtonStart()
-    {
 
-
-        RobbyUIManager.Instance.startMenu.SetActive(true);
-    }
 
 }

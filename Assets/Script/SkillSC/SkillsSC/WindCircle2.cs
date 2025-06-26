@@ -29,7 +29,7 @@ public class WindCircle2 : MonoBehaviour
 
         if (windCircle == null)
         {
-            Destroy(windCircle);
+            Destroy(gameObject);
         }
 
     }

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Button : MonoBehaviour
 {
@@ -32,9 +33,10 @@ public class Button : MonoBehaviour
     [SerializeField]
     private Costmenual costmenual;
 
-    //[SerializeField]
-    //private GameObject settingUI;
- 
+
+    [SerializeField]
+    private TextMeshProUGUI speedButton;
+
     void Start()
     {
         allSkills = Resources.LoadAll<SkillData>("Skills");
@@ -190,6 +192,23 @@ public class Button : MonoBehaviour
         //settingUI.SetActive(true);
 
         Time.timeScale = 0f;
+    }
+
+    private bool isSpeedUp = false;
+
+    public void onClickSpeedButton()
+    {
+        isSpeedUp = !isSpeedUp;
+        if (isSpeedUp)
+        {
+            speedButton.text = "x2";
+            Time.timeScale = 2f;
+        }
+        else
+        {
+            speedButton.text = "x1";
+            Time.timeScale = 1f;
+        }
     }
 }
 

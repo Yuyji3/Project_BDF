@@ -76,6 +76,7 @@ public class RoundManager : MonoBehaviour
         SaveManager.Instance.AddCampaignClear();
 
         gameClear.SetActive(true);
+        Time.timeScale = 0f;
 
     }
 }

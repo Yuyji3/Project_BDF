@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MonsterManager : MonoBehaviour
 {
-    public static int monsterCount = 0;
-    public static int maxCount = 20;
+    public  int monsterCount = 0;
+    public  int maxCount = 20;
 
     public int monsterKill = 0;
 
@@ -26,7 +26,7 @@ public class MonsterManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // 씬 넘어가도 유지하고 싶을 경우
+           // DontDestroyOnLoad(gameObject); // 씬 넘어가도 유지하고 싶을 경우
         }
         else
         {
@@ -73,7 +73,7 @@ public class MonsterManager : MonoBehaviour
         monsterKill++; 
     }
 
-    public static int GetCount() => monsterCount;
+    public int GetCount() => monsterCount;
 
 
 }

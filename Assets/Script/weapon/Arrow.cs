@@ -3,7 +3,7 @@ using UnityEngine;
 public class arrow : MonoBehaviour
 {
     private float _damage;
-    public float speed = 10f;
+    public float speed = 100f;
     private Transform target;
 
     public void SetTarget(Transform t)

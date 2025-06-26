@@ -4,7 +4,7 @@ public class ThunderSC : MonoBehaviour
 {
     public float triggerChance = 0.3f; // 30% 확률로 발동
 
-    public GameObject EffectPrefab; // 시각효과(옵션)
+    //private GameObject EffectPrefab; // 시각효과(옵션)
     public float thunderMultiplier = 0;  // 공격력 계수
 
     public SkillGrade grade;
@@ -40,6 +40,7 @@ public class ThunderSC : MonoBehaviour
         Skillset();
         if (Random.value <= triggerChance)
         {
+            
             float damage = Tower.Instance.attackPower * thunderMultiplier;
 
             // 데미지 적용
@@ -50,17 +51,22 @@ public class ThunderSC : MonoBehaviour
             }
 
             // 번개 이펙트 생성 (선택사항)
-            if (EffectPrefab != null)
-            {
-                GameObject effect  = Instantiate(EffectPrefab, target.position, Quaternion.identity);
 
-                Destroy(effect, 1f);
-            }
+
+            GameObject effect = PoolManager.Instance.SpawnFromPool("Thunder", target.position, Quaternion.identity);
+
+            StartCoroutine(ReturnEffectToPool(effect));
+            
 
             Debug.Log($"Thunder  {damage} 데미지");
         }
     }
- 
+    private IEnumerator ReturnEffectToPool(GameObject effect)
+    {
+        yield return new WaitForSeconds(1f);
+        PoolManager.Instance.ReturnToPool("Thunder", effect);
+    }
+
     public void Skillset()
     {
 
