@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GlodSkill
   m_EditorClassIdentifier: 
   skillnumber: 3
-  skillname: 
+  skillname: Gold
   icon: {fileID: 1356962760864012283, guid: de14242464674984b921d7eaaea45793, type: 3}
   level: 0
   currentpower: 0

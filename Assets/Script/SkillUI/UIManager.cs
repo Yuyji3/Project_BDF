@@ -9,12 +9,7 @@ public class SkillUIManager : MonoBehaviour
    //public SkillSlot slot;
 
 
-    [SerializeField]
-    private TextMeshProUGUI skillname;
-    [SerializeField]
-    private Image skillimage;
-    [SerializeField]
-    private TextMeshProUGUI skilltext;
+
 
     void Start()
     {
@@ -29,11 +24,5 @@ public class SkillUIManager : MonoBehaviour
 
         }
     }
-    public void ShowSkillInfo(SkillSlotUI skillindex)
-    {
-        int index = skillindex.slotIndex;
 
-        skillname.text = slots[index].name
-        skillimage.sprite = slots[index].iconImage.sprite;
-    }
 }

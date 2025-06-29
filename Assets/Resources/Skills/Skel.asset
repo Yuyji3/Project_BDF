@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Skel
   m_EditorClassIdentifier: 
   skillnumber: 2
-  skillname: 
+  skillname: Skel
   icon: {fileID: 21300000, guid: 8a5f9829a049c704fa992203bfc451f2, type: 3}
   level: 0
   currentpower: 0
