@@ -42,6 +42,8 @@ public class MonsterHp : MonoBehaviour
         if (currentHp <= 0)
         {
             Destroy(gameObject);
+
+            GameManager.Instance.currentGold += 10;
         }
     }
 

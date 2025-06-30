@@ -643,10 +643,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 116e316520e9b0645af88f5c93eaad0d, type: 2}
+  m_sharedMaterial: {fileID: -3133851698629813630, guid: 116e316520e9b0645af88f5c93eaad0d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1160,7 +1160,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 4e3eff088f35a29409a7e356d57bd31d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3597,7 +3597,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 111
+  m_text: WindCircle
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4295,13 +4295,13 @@ RectTransform:
   m_Children:
   - {fileID: 1059158566}
   - {fileID: 2050361637}
-  - {fileID: 432631372}
-  - {fileID: 91122455}
   - {fileID: 1665775595}
   - {fileID: 883793348}
   - {fileID: 718638430}
   - {fileID: 1457617678}
   - {fileID: 875214575}
+  - {fileID: 91122455}
+  - {fileID: 432631372}
   - {fileID: 454318068}
   - {fileID: 699427503}
   m_Father: {fileID: 0}

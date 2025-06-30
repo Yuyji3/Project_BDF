@@ -10,7 +10,8 @@ public class Button : MonoBehaviour
 
     public  SkillSlot currentSkill2;
 
-   
+    private float currentTime;
+
     public SkillGrade upgraded;
     SkillGrade currentGrade;
 
@@ -147,7 +148,7 @@ public class Button : MonoBehaviour
     public void back(GameObject button2)
     {
         button2.SetActive(false);
-        Time.timeScale = 1f;
+        Time.timeScale = currentTime;
     }
 
     public void UpgradeButton()
@@ -203,11 +204,15 @@ public class Button : MonoBehaviour
         {
             speedButton.text = "x2";
             Time.timeScale = 2f;
+
+            currentTime = Time.timeScale;
         }
         else
         {
             speedButton.text = "x1";
             Time.timeScale = 1f;
+
+            currentTime = Time.timeScale;
         }
     }
 }

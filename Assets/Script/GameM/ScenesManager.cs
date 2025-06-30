@@ -7,8 +7,8 @@ public class ScenesManager : MonoBehaviour
     public void OnClikButtonCampaign(string Campaign)
     {
         SceneManager.LoadScene(Campaign);
+        Time.timeScale = 1f;
 
-        
     }
     public void OnClikButtonRobby(string Robby)
     {

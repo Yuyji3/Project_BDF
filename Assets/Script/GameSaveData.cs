@@ -12,5 +12,7 @@ public class GameSaveData
 
     public int blueCrystal;
     public int redCrystal;
+
+    public bool skillAchieve;
 }
 
