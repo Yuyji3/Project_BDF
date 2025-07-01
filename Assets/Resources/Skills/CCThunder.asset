@@ -18,5 +18,6 @@ MonoBehaviour:
   level: 0
   currentpower: 0
   uppower: 0
-  skillex: CCThunder
+  skillex: "\uBAAC\uC2A4\uD130\uD55C\uD14C \uD53C\uD574\uB97C \uC8FC\uACE0 \uC6C0\uC9C1\uC784\uC744
+    \uBA48\uCD98\uB2E4"
   skillScriptTypeName: CCThunderSC
